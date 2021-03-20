@@ -1,0 +1,27 @@
+{
+  "name": "item-0321",
+  "version": "1.0.0",
+  "description": "Basic CRUD RESTful API for frontend development",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/programming-2020/item-0321.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "RESTful",
+    "API"
+  ],
+  "author": "Damjan Ivanovic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/programming-2020/item-0321/issues"
+  },
+  "homepage": "https://github.com/programming-2020/item-0321#readme",
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
