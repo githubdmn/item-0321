@@ -15,7 +15,8 @@ const { PORT } = process.env;
 express()
 	.use(express.json())
 	.use(express.urlencoded({ extended: true }))
-	.get('/app-status', (req, res) => { res.status(200).send('OK')})
+	.get('/', (req, res) => { res.status(200).send('Home - item-0321 app')})
+	.get('/health', (req, res) => { res.status(200).send('OK')})
 	.listen(PORT, () => { console.log(`Listening on port ${PORT}...`);});
 
 
