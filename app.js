@@ -12,7 +12,7 @@ require('dotenv').config({
 const { PORT } = process.env;
 
 
-const app = require('./router-items/itemsRouter');
+const app = require('./router-items/items-router');
 
 express()
 	.use(express.json())
