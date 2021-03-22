@@ -16,7 +16,7 @@ router.get('/items', async (req, res) => {
 
 //get an item 
 router.get('/item/:id', async (req, res) => {
-    res.status(200).send(`${await ItemsService.GetAll}`);
+    res.status(200).send(await ItemsService.GetAll());
 });
 
 // update an item
