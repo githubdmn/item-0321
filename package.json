@@ -29,7 +29,8 @@
     "express": "^4.17.1",
     "mogodb": "0.0.1-security",
     "mongodb": "^3.6.5",
+    "mongoose": "^5.12.1",
     "nodemon": "^2.0.7",
-    "uuid": "^8.3.2"
+    "uuidv4": "^6.2.6"
   }
 }
