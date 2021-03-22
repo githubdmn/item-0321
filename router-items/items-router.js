@@ -1,20 +1,22 @@
 
-
 const router = require('express').Router();
+
+const ItemsService = require('./items-service');
 
 // create an item
 router.post('/item', (req, res) => {
-    res.status(404).send('Not POST implemented');
+    res.status(404).send('a');
 });
 
 // get a list of items // possible paginations and filtering
-router.get('/items', (req, res) => {
-    res.status(404).send('GET LIST Not implemented');
+router.get('/items', async (req, res) => {
+    await ItemsService.Create();
+    res.status(200).send(await ItemsService.GetAll());
 });
 
 //get an item 
-router.get('/item/:id', (req, res) => {
-    res.status(404).send('GET single item Not implemented');
+router.get('/item/:id', async (req, res) => {
+    res.status(200).send(`${await ItemsService.GetAll}`);
 });
 
 // update an item
