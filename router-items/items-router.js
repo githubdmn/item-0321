@@ -10,6 +10,7 @@ router.post('/item', (req, res) => {
 
 // get a list of items // possible paginations and filtering
 router.get('/items', async (req, res) => {
+    // TODO: implement data validation
     await ItemsService.Create();
     res.status(200).send(await ItemsService.GetAll());
 });
