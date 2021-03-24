@@ -4,34 +4,67 @@
 const items = require('../database/mongoose').Items;
 const uuid = require('uuid').v4();
 
-const Create = async () => {
+const Create = async (item) => {
     return await items.insertMany({
         id: uuid,
-        value: 123,
-        description: "my first test",
-        tags: ['a', 'b', 'c']
+        value: item.value,
+        description: item.description,
+        tags: item.tags
     });
 };
 
-const Get = () => { };
+const Get = async (id) => {
+    try {
+        const item = await items.findOne({ "id": id });
+        if (item) {
+            return item;
+        } else {
+            return 'No item found';
+        }
+    } catch (error) {
+        return error;
+    }
+};
 
 const GetAll = async () => {
     return await items.find();
 };
 
-const Update = () => { };
+const Update = async (id, item) => {
+    try {
+        return await items.findOneAndUpdate({ "id": id },
+            {
+                value: item.value,
+                description: item.description,
+                tags: item.tags
+            }, { useFindAndModify: false });
+    } catch (error) {
+        return error;
+    }
+};
 
-const Delete = () => { };
+const Delete = async (id) => {
+    try {
+        const item = await items.deleteOne({ "id": id });
+        if (item) {
+            return item;
+        } else {
+            return 'No item deleted';
+        }
+    } catch (error) {
+        return error;
+    }
+};
 
-
-
-
-
+const DeleteAll = async () => {
+    return await items.deleteMany({});
+}
 
 module.exports.Create = Create;
 module.exports.Get = Get;
 module.exports.GetAll = GetAll;
 module.exports.Update = Update;
 module.exports.Delete = Delete;
+module.exports.DeleteAll = DeleteAll;
 
 
