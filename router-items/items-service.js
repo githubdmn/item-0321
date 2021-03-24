@@ -27,7 +27,9 @@ const Get = async (id) => {
 };
 
 const GetAll = async () => {
-    return await items.find();
+    const result = await items.find();
+    if (result.length) { return result; }
+    else { return "The database is empty"; }
 };
 
 const Update = async (id, item) => {
@@ -45,7 +47,8 @@ const Update = async (id, item) => {
 
 const Delete = async (id) => {
     try {
-        const item = await items.deleteOne({ "id": id });
+        const item = await items.findOneAndDelete({ "id": id },
+            { useFindAndModify: false });
         if (item) {
             return item;
         } else {
