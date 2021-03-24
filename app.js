@@ -18,7 +18,7 @@ const app = require('./router-items/items-router');
 express()
 	.use(express.json())
 	.use(express.urlencoded({ extended: true }))
-	.get('/', (req, res) => { res.status(200).send(`Home - Mon 22 Mar 15:10:38 CET 2021`) })
+	.get('/', (req, res) => { res.status(200).send(`Home - Mon 22 Mar 20:36:04 CET 2021`) })
 	.get('/health', (req, res) => { res.status(200).send('OK') })
 	.use('/api', app)
 	.listen(PORT, () => { console.log(`Listening on port ${PORT} ...`); });
