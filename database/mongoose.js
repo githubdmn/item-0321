@@ -2,7 +2,9 @@
 
 const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
-const dblink = `mongodb+srv://${username}:${password}@cluster0.eeu87.mongodb.net/test-item-0321`;
+const server = process.env.DB_SERVER;
+const dbname = process.env.DB_NAME;
+const dblink = `mongodb+srv://${username}:${password}@${server}/${dbname}`;
 
 const mongoose = require('mongoose');
 
